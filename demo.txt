@@ -1,0 +1,24 @@
+
+
+personal note
+
+spring boot in a nutshell
+
+testing in springboot
+
+unit testing
+	mocking
+	springrunner
+
+integration testing
+
+
+frontend testing
+	mvc
+	webflux
+	json
+
+
+
+
+
