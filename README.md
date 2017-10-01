@@ -1,1 +1,3 @@
-# springboot-testing-demo
+# Showcase for testing in Spring Boot 2
+
+
