@@ -3,7 +3,7 @@ package it.codedvalue.springboot.campaign.controller;
 import javax.annotation.Resource;
 
 import it.codedvalue.springboot.campaign.domain.Campaign;
-import it.codedvalue.springboot.campaign.service.CampaignService;
+import it.codedvalue.springboot.campaign.service.ReactiveCampaignService;
 import java.time.LocalDate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,14 +14,14 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
-public class CampaignController {
+public class ReactiveCampaignController {
 
     @Resource
-    private CampaignService campaignService;
+    private ReactiveCampaignService reactiveCampaignService;
 
     @GetMapping("campaign/active")
     public Flux<Campaign> getActiveCampaign() {
-        return campaignService.getActiveCampaignsOnReferenceDate(LocalDate.now());
+        return reactiveCampaignService.getActiveCampaignsOnReferenceDate(LocalDate.now());
     }
 
     @PostMapping("campaign/register")

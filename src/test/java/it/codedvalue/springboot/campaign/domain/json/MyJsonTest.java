@@ -31,7 +31,6 @@ public class MyJsonTest {
     private final String CAMPAIGN_JSON = "{\"id\":1,\"name\":\"click and win\",\"code\":\"CAW\",\"startDate\":[2017,9,30]," +
             "\"endDate\":[2017,11,30]}";
 
-
     @Test
     public void testSerialize() throws Exception {
 

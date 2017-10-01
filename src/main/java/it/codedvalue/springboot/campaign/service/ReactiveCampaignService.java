@@ -7,11 +7,11 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
 @Service
-public class CampaignService {
+public class ReactiveCampaignService {
 
     private CampaignRepository campaignRepository;
 
-    public CampaignService(CampaignRepository campaignRepository) {
+    public ReactiveCampaignService(CampaignRepository campaignRepository) {
         this.campaignRepository = campaignRepository;
 
     }
