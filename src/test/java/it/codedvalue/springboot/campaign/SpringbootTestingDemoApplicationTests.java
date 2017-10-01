@@ -1,4 +1,4 @@
-package it.codedvalue.springboot.testing;
+package it.codedvalue.springboot.campaign;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
