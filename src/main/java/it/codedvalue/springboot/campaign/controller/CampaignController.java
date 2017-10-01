@@ -3,9 +3,8 @@ package it.codedvalue.springboot.campaign.controller;
 import javax.annotation.Resource;
 
 import it.codedvalue.springboot.campaign.domain.Campaign;
-import it.codedvalue.springboot.campaign.repository.CampaignRepository;
+import it.codedvalue.springboot.campaign.service.CampaignService;
 import java.time.LocalDate;
-import java.time.Month;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,11 +17,11 @@ import reactor.core.publisher.Mono;
 public class CampaignController {
 
     @Resource
-    private CampaignRepository campaignRepository;
+    private CampaignService campaignService;
 
     @GetMapping("campaign/active")
     public Flux<Campaign> getActiveCampaign() {
-        return campaignRepository.getActiveCampaignsOnReferenceDate(LocalDate.now());
+        return campaignService.getActiveCampaignsOnReferenceDate(LocalDate.now());
     }
 
     @PostMapping("campaign/register")
