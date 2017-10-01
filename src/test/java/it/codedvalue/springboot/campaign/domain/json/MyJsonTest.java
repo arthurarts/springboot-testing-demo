@@ -1,4 +1,4 @@
-package it.codedvalue.springboot.campaign.json;
+package it.codedvalue.springboot.campaign.domain.json;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -47,7 +47,7 @@ public class MyJsonTest {
     public void testDeserialize() throws Exception {
         assertThat(this.json.parse(CAMPAIGN_JSON))
                 .isEqualTo(campaignToSerialize);
-        assertThat(this.json.parseObject(CAMPAIGN_JSON).getCode()).isEqualTo("caw");
+        assertThat(this.json.parseObject(CAMPAIGN_JSON).getCode()).isEqualTo("CAW");
     }
 
 }
