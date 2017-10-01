@@ -18,6 +18,9 @@ public class CampaignService {
 
     public Flux<Campaign> getActiveCampaignsOnReferenceDate(final LocalDate referenceDate) {
 
+
+        campaignRepository.findAll().forEach(System.out::print);
+
         return Flux.fromIterable(campaignRepository.findAll())
                 .filter(c -> referenceDate.isAfter(c.getStartDate()) && referenceDate.isBefore(c.getEndDate()));
     }

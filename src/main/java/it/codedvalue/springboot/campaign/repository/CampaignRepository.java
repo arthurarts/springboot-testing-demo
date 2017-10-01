@@ -15,5 +15,4 @@ import reactor.core.publisher.Flux;
 
 public interface CampaignRepository extends CrudRepository<Campaign, Long> {
 
-
 }
