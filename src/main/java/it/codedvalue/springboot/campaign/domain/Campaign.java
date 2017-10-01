@@ -11,6 +11,8 @@ import lombok.experimental.Tolerate;
 import javax.persistence.Id;
 
 @Entity
+@Data
+@Builder
 public class Campaign {
 
     @Id
@@ -20,28 +22,10 @@ public class Campaign {
     private LocalDate startDate;
     private LocalDate endDate;
 
-
     @Tolerate
-    Campaign() {}
+    public Campaign () {
 
-    public Long getId() {
-        return id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public LocalDate getStartDate() {
-        return startDate;
-    }
-
-    public LocalDate getEndDate() {
-        return endDate;
-    }
 }
 
