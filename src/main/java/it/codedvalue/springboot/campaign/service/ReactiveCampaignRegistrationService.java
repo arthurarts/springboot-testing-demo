@@ -30,9 +30,7 @@ public class ReactiveCampaignRegistrationService {
     }
 
     public Flux<CampaignRegistration> getAllCampaignRegistrations() {
-
         return Flux.fromIterable(campaignRegistrationRepository.findAll());
-
     }
 
     public Flux<CampaignRegistration> getCampaignRegistrationsByCampaignId(final Integer campaignId) {

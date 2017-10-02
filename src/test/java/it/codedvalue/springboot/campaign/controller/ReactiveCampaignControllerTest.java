@@ -20,7 +20,6 @@ import reactor.core.publisher.Mono;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class ReactiveCampaignControllerTest {
 
-
     @MockBean
     private ReactiveCampaignService reactiveCampaignService;
 
@@ -51,10 +50,5 @@ public class ReactiveCampaignControllerTest {
                 .json("{\"id\":1,\"name\":\"Click and Win\",\"code\":\"CAW\",\"startDate\":[2017,9,30],\"endDate\":[2017,10,31]}");
 
     }
-
-
-
-
-
 
 }

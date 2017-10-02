@@ -19,6 +19,7 @@ public class ReactiveCampaignController {
 
     private ReactiveCampaignService reactiveCampaignService;
 
+    /** no autowiring annotation needed :-) */
     public ReactiveCampaignController(final ReactiveCampaignService reactiveCampaignService) {
         this.reactiveCampaignService = reactiveCampaignService;
     }

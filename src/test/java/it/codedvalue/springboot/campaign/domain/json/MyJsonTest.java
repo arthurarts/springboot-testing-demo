@@ -34,18 +34,23 @@ public class MyJsonTest {
     @Test
     public void testSerialize() throws Exception {
 
+        // Compare complete JSON
         assertThat(this.json.write(campaignToSerialize)).isEqualToJson(CAMPAIGN_JSON);
 
         // Or use JSON path based assertions
         assertThat(this.json.write(campaignToSerialize)).hasJsonPathStringValue("@.code");
+
         assertThat(this.json.write(campaignToSerialize)).extractingJsonPathStringValue("@.code")
                 .isEqualTo("CAW");
     }
 
+
     @Test
     public void testDeserialize() throws Exception {
+
         assertThat(this.json.parse(CAMPAIGN_JSON))
                 .isEqualTo(campaignToSerialize);
+
         assertThat(this.json.parseObject(CAMPAIGN_JSON).getCode()).isEqualTo("CAW");
     }
 
