@@ -5,6 +5,7 @@ import it.codedvalue.springboot.campaign.repository.CampaignRepository;
 import java.time.LocalDate;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @Service
 public class ReactiveCampaignService {
@@ -16,8 +17,12 @@ public class ReactiveCampaignService {
 
     }
 
-    public Flux<Campaign> getActiveCampaignsOnReferenceDate(final LocalDate referenceDate) {
+    public Mono<Campaign> getCampaignById(Long id) {
+        return Mono.just(campaignRepository.findById(id).get());
+    }
 
+
+    public Flux<Campaign> getActiveCampaignsOnReferenceDate(final LocalDate referenceDate) {
 
         campaignRepository.findAll().forEach(System.out::print);
 

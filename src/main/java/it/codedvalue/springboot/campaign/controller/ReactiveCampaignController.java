@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
@@ -19,14 +20,14 @@ public class ReactiveCampaignController {
     @Resource
     private ReactiveCampaignService reactiveCampaignService;
 
-    @GetMapping("campaign/active")
-    public Flux<Campaign> getActiveCampaign() {
-        return reactiveCampaignService.getActiveCampaignsOnReferenceDate(LocalDate.now());
+    @GetMapping("campaign/{id}/r")
+    public Mono<Campaign> getCampaignById(@PathVariable final Long id) {
+        return reactiveCampaignService.getCampaignById(id);
     }
 
-    @PostMapping("campaign/register")
-    public Mono<ResponseEntity> registerForCampaign() {
-        return Mono.just(new ResponseEntity(HttpStatus.OK));
+    @GetMapping("campaign/active/r")
+    public Flux<Campaign> getActiveCampaign() {
+        return reactiveCampaignService.getActiveCampaignsOnReferenceDate(LocalDate.now());
     }
 
 }
