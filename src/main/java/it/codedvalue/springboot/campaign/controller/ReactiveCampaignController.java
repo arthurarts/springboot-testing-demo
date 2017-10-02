@@ -17,8 +17,11 @@ import reactor.core.publisher.Mono;
 @RestController
 public class ReactiveCampaignController {
 
-    @Resource
     private ReactiveCampaignService reactiveCampaignService;
+
+    public ReactiveCampaignController(final ReactiveCampaignService reactiveCampaignService) {
+        this.reactiveCampaignService = reactiveCampaignService;
+    }
 
     @GetMapping("campaign/{id}/r")
     public Mono<Campaign> getCampaignById(@PathVariable final Integer id) {
