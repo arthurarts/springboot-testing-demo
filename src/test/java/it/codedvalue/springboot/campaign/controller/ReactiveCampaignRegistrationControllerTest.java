@@ -21,18 +21,14 @@ public class ReactiveCampaignRegistrationControllerTest {
             .bindToServer().baseUrl("http://localhost:8080")
             .build();
 
-    @Before
-    public void setUp() {
+    @Test
+    public void testRegistrationSuccesful() throws Exception {
 
+        // No registrations for campaign 2
         clientIntegration.get().uri("campaign/registrations/all/2/r")
                 .exchange()
                 .expectBody()
                 .json("[]");
-    }
-
-    @Test
-    public void testRegistrationSuccesful() throws Exception {
-
 
         // Given
         CampaignRegistration registration = CampaignRegistration.builder()
