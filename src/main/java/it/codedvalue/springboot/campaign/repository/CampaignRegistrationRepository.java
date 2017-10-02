@@ -4,6 +4,6 @@ import it.codedvalue.springboot.campaign.domain.Campaign;
 import it.codedvalue.springboot.campaign.domain.CampaignRegistration;
 import org.springframework.data.repository.CrudRepository;
 
-public interface CampaignRegistrationRepository extends CrudRepository<CampaignRegistration, Long> {
+public interface CampaignRegistrationRepository extends CrudRepository<CampaignRegistration, Integer> {
 
 }

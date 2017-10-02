@@ -12,12 +12,12 @@ public class ReactiveCampaignService {
 
     private CampaignRepository campaignRepository;
 
-    public ReactiveCampaignService(CampaignRepository campaignRepository) {
+    public ReactiveCampaignService(final CampaignRepository campaignRepository) {
         this.campaignRepository = campaignRepository;
 
     }
 
-    public Mono<Campaign> getCampaignById(Long id) {
+    public Mono<Campaign> getCampaignById(final Integer id) {
         return Mono.just(campaignRepository.findById(id).get());
     }
 

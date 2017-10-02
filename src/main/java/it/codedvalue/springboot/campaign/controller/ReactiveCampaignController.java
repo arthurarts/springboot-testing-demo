@@ -21,7 +21,7 @@ public class ReactiveCampaignController {
     private ReactiveCampaignService reactiveCampaignService;
 
     @GetMapping("campaign/{id}/r")
-    public Mono<Campaign> getCampaignById(@PathVariable final Long id) {
+    public Mono<Campaign> getCampaignById(@PathVariable final Integer id) {
         return reactiveCampaignService.getCampaignById(id);
     }
 

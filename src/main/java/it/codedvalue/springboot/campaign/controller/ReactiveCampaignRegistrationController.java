@@ -26,8 +26,13 @@ public class ReactiveCampaignRegistrationController {
         return reactiveCampaignRegistrationService.getAllCampaignRegistrations();
     }
 
+    @GetMapping("campaign/registrations/all/{campaignId}/r")
+    public Flux<CampaignRegistration> getCampaignRegistrationByCampaignId(@PathVariable final Integer campaignId) {
+        return reactiveCampaignRegistrationService.getCampaignRegistrationsByCampaignId(campaignId);
+    }
+
     @PostMapping("campaign/register/r")
-    public Mono<ResponseEntity> register(@RequestBody CampaignRegistration registration) {
+    public Mono<ResponseEntity> register(@RequestBody final CampaignRegistration registration) {
         System.out.println("POST!");
         System.out.println(registration);
         reactiveCampaignRegistrationService.saveRegistration(registration);

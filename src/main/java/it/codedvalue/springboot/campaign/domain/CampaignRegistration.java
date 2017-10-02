@@ -19,12 +19,12 @@ public class CampaignRegistration {
     @Id
     @GeneratedValue
     @JsonIgnore
-    private Long id;
+    private Integer id;
     private String firstName;
     private String lastName;
     private String iban;
     private String email;
-    private Long campaignId;
+    private Integer campaignId;
 
     @Tolerate
     public CampaignRegistration() {

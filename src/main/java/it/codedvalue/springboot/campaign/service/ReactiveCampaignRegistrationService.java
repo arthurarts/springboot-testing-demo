@@ -19,12 +19,12 @@ public class ReactiveCampaignRegistrationService {
 
     }
 
-    public Mono<CampaignRegistration> getCampaignRegistrationById(Long id) {
+    public Mono<CampaignRegistration> getCampaignRegistrationById(final Integer id) {
         return Mono.just(campaignRegistrationRepository.findById(id).get());
     }
 
 
-    public Mono<Void> saveRegistration(CampaignRegistration registration) {
+    public Mono<Void> saveRegistration(final CampaignRegistration registration) {
         campaignRegistrationRepository.save(registration);
         return Mono.empty();
     }
@@ -33,6 +33,16 @@ public class ReactiveCampaignRegistrationService {
 
         return Flux.fromIterable(campaignRegistrationRepository.findAll());
 
+    }
+
+    public Flux<CampaignRegistration> getCampaignRegistrationsByCampaignId(final Integer campaignId) {
+
+        return Flux.fromIterable(
+                campaignRegistrationRepository.findAll())
+                .filter(
+                        registration -> registration.getCampaignId()
+                                .equals(campaignId)
+                );
     }
 
 }

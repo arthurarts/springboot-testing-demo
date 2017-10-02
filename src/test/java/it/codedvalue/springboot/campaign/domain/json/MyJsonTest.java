@@ -21,7 +21,7 @@ public class MyJsonTest {
     private JacksonTester<Campaign> json;
 
     private Campaign campaignToSerialize = Campaign.builder()
-            .id(1l)
+            .id(1)
             .code("CAW")
             .name("click and win")
             .startDate(LocalDate.of(2017, Month.SEPTEMBER, 30))

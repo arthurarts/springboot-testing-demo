@@ -16,7 +16,7 @@ import javax.persistence.Id;
 public class Campaign {
 
     @Id
-    private Long id;
+    private Integer id;
     private String name;
     private String code;
     private LocalDate startDate;
